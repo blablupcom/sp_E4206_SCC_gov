@@ -86,7 +86,7 @@ def convert_mth_strings ( mth_string ):
 #### VARIABLES 1.0
 
 entity_id = "E4206_SCC_gov"
-url = "http://www.salford.gov.uk/council-expenditure.htm"
+url = "https://www.salford.gov.uk/your-council/finance/council-expenditure-over-500/"
 errors = 0
 data = []
 
@@ -98,7 +98,7 @@ soup = BeautifulSoup(html, "lxml")
 
 #### SCRAPE DATA
 
-block = soup.find('div', attrs = {'class':'black_border pale_grey'})
+block = soup.find('div', attrs = {'class':'documents'})
 links = block.find_all('a')
 for link in links:
     if 'CSV' in link.text:
@@ -137,4 +137,3 @@ if errors > 0:
 
 
 #### EOF
-
